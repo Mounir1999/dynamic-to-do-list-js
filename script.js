@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to add a new task
     function addTask(taskText, save = true) {
-        // If the taskText is undefined, return early
-        if (taskText === undefined) return;
+        // If the taskText is undefined or empty, return early
+        if (!taskText) return;
 
         // Create a new list item (li) element
         const li = document.createElement('li');
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Create a 'Remove' button for the task
         const removeBtn = document.createElement('button');
         removeBtn.textContent = "Remove";
-        removeBtn.classList.add('remove-btn');
+        removeBtn.classList.add('remove-btn'); // Use classList.add() to add the class
 
         // Add an event listener to the 'Remove' button to remove the task
         removeBtn.addEventListener('click', () => {
